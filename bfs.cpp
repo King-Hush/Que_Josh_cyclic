@@ -18,14 +18,14 @@ int main() {
         for (int j = 0; j < V; j++)
             cin >> adj[i][j];
 
-    // Variables for BFS
+    
     bool cycleFound = false;
     int cycleStart = -1, cycleEnd = -1;
     int front = 0, rear = 0;
 
     for (int start = 0; start < V; start++) {
         if (visited[start] == 0) {
-            // Reset queue and parent
+        
             front = 0;
             rear = 0;
             queue[rear++] = start;
@@ -42,7 +42,7 @@ int main() {
                             parent[v] = u;
                             queue[rear++] = v;
                         } else if (v != parent[u]) {
-                            // A cycle is found
+                        
                             cycleFound = true;
                             cycleStart = v;
                             cycleEnd = u;
@@ -56,11 +56,11 @@ int main() {
         if (cycleFound) break;
     }
 
-    // Output
+    
     if (cycleFound) {
         cout << "\nCycle found using BFS!\n";
 
-        // Reconstruct cycle path
+      
         int temp = cycleEnd;
         int index = 0;
         path[index++] = cycleEnd;
@@ -70,8 +70,7 @@ int main() {
             path[index++] = temp;
         }
 
-        path[index++] = cycleEnd; // Complete the cycle
-
+        path[index++] = cycleEnd; 
         cout << "Vertices in cycle: ";
         for (int i = index - 1; i >= 0; i--)
             cout << path[i] << " ";
