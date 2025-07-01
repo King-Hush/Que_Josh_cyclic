@@ -10,17 +10,16 @@ int main() {
     int front, rear;
     int V;
 
-    // Input number of vertices
     cout<<"Enter number of vertices: ";
     cin>>V;
 
-    // Input adjacency matrix
+   
     cout<< "Enter adjacency matrix:";
        for (int i = 0; i < V; i++)
         for (int j = 0; j < V; j++) 
         cin>>adj[i][j];
 
-    // ========== DFS without function ==========
+ 
     cout << "\n--- DFS Check ---\n";
     for (int i = 0; i < V; i++) visited[i] = 0;
 
